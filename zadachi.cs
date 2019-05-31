@@ -74,10 +74,11 @@ namespace SoloLearn
         }
     }
 }
+
+
 /*n = 12 правая часть, левая часть.
 3 переменной , х = , n =   к*/
-                    Console.WriteLine("The result is {0}", x);
-                    Console.WriteLine("{0} ; {1} ", x, s2 );
+
 
 2.5
 using System;
@@ -111,7 +112,7 @@ namespace SoloLearn
 
 ___________________
 
-(2.6)
+2.6
 using System;
 using System.Collections.Generic;
 using System.Linq;
