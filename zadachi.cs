@@ -150,26 +150,27 @@ using System.Threading.Tasks;
 
 namespace SoloLearn
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-       Console.WriteLine("Type a sentence");
-        string s = Console.ReadLine();
-        int L = 0;
-        for(int R = 0; R < s.Length; ++R)
+        static void Main(string[] args)
         {
-            if(s[R] == ' ')
+            Console.WriteLine("Type a sentence");
+            string s = Console.ReadLine();
+            int L = 0;
+            for (int R = 0; R < s.Length; ++R)
             {
-                string ss = s.Substring(L, R - L + 1);
-                while(s[R] == ' ')
+                if (s[R] == ' ' || R == s.Length -1)
+                {
+                    string ss = s.Substring(L, R - L + 1);
+                    while (s[R] == ' ' && R != s.Length - 1)
                     ++R;
-                L = R;
-                Console.WriteLine(ss);
+                    L = R;
+                    Console.WriteLine(ss);
+
+                }
             }
         }
     }
-  }
 }
 
 
@@ -253,16 +254,23 @@ using System.Threading.Tasks;
 
 namespace SoloLearn
 {
- class Program
- {
-  static void Main(string[] args)
-  {
-   int age = Convert.ToInt32(Console.ReadLine());
-   Console.WriteLine("Вам {0} лет", age);
-  }
- }
-}
+    class Program
+    {
+        static void Main(string[] args)
+        {
 
+            int age = Convert.ToInt32(Console.ReadLine());
+            if (age % 10 == 1 && age% 100!= 11)
+                Console.WriteLine("Вам {0} год",age);
+            else if (age % 10 < 5 && (age%100 > 20 || age < 9) && age % 10 != 0)
+                Console.WriteLine("Вам {0} годa", age);
+            else 
+                Console.WriteLine("Вам {0} лет", age);
+
+
+        }
+    }
+} 
 
 3.1
 using System;
@@ -274,18 +282,19 @@ using System.Threading.Tasks;
 
 namespace SoloLearn
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-        int[] mas = new int[10];
-        for(int i = 0; i < 10; ++i)
-            mas[i] = Convert.ToInt32(Console.ReadLine());
-        for(int i = 9; i >= 0; —i)
-            Console.Write(mas[i] + " ");
+        static void Main(string[] args)
+        {
+            int[] mas = new int[10];
+            for (int i = 0; i < 10; ++i)
+                mas[i] = Convert.ToInt32(Console.ReadLine());
+            for (int i = 9; i >= 0; --i)
+                Console.Write(mas[i] + " ");
+        }
     }
-  }
 }
+
 
 3.2
 using System;
@@ -297,25 +306,27 @@ using System.Threading.Tasks;
 
 namespace SoloLearn
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-        int n, k;
-        n = Convert.ToInt32(Console.ReadLine());
-        k = Convert.ToInt32(Console.ReadLine());
-        string[] s = new string[n];
-        string[] ss = new string[k];
-        for(int i = 0; i < n; ++i)
-            s[i] = Console.ReadLine();
-        for(int i = 0; i < k; ++i)
-            ss[i] = Console.ReadLine();
-        for(int i = 0; i < k; ++i)
-            for(int j = 0; j < n; ++j)
-                Console.WriteLine(ss[i] + " " + s[j]);
+        static void Main(string[] args)
+        {
+            string n, k;
+            n = Console.ReadLine();
+            k = Console.ReadLine();
+
+            string[] s = n.Split(' ');
+            string[] ss = k.Split(' ');
+
+            for (int i = 0; i < s.Length; ++i)
+                for (int j = 0; j <ss.Length; ++j)
+
+
+                    Console.WriteLine(ss[i] + " " + s[j]);
+        }
     }
-  }
-}
+} 
+
+
 3.3
 using System;
 using System.Collections.Generic;
