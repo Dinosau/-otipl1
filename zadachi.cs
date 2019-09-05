@@ -508,7 +508,8 @@ namespace SoloLearn
   }
 }
 
-3.7
+3.7  вводить и потом не ставить пробел в конце!
+    
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -518,50 +519,49 @@ using System.Threading.Tasks;
 
 namespace SoloLearn
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-        int n;
-        n = Convert.ToInt32(Console.ReadLine());
-        int[] arr = new int[n];
-        for(int i = 0; i < n; ++i)
-              arr[i] = Convert.ToInt32(Console.ReadLine());
-          int c = 0;
-          for(int i = 0; i < n; ++i)
-              if(arr[i] == 0)
-                  ++c;
-          Console.WriteLine(c);
-          int[] mas = new int[c];
-          int pos = 0;
-          for(int i = 0; i < n; ++i)
-              if(arr[i] == 0)
-              {
-                  mas[pos] = i;
-                  ++pos;
-              }
-          for(int i = 0; i < c; ++i)
-              Console.Write(mas[i] + " ");
-          Console.WriteLine();
-          
-          int[] sum = new int[c - 1];
-          int m = 0;
-          pos = 0;
-          for(int i = mas[0] + 1; i <= mas[c - 1]; ++i)
-          {
-              if(arr[i] == 0)
-              {
-                  sum[pos] = m;
-                  m = 0;
-                  ++pos;
-                  continue;
-              }
-              m += arr[i];
-          }
-          for(int i = 0; i < c - 1; ++i)
-              Console.Write(sum[i] + " ");
+        static void Main(string[] args)
+        {
+            string text;
+            text = Console.ReadLine();
+            string[] arr = text.Split(' ');
+            int n = arr.Length;
+            int c = 0;
+            for (int i = 0; i < n; ++i)
+                if (Convert.ToInt32(arr[i]) == 0)
+                    ++c;
+            Console.WriteLine(c);
+            int[] mas = new int[c];
+            int pos = 0;
+            for (int i = 0; i < n; ++i)
+                if (Convert.ToInt32(arr[i]) == 0)
+                {
+                    mas[pos] = i;
+                    ++pos;
+                }
+            for (int i = 0; i < c; ++i)
+                Console.Write(mas[i] + " ");
+            Console.WriteLine();
+
+            int[] sum = new int[c - 1];
+            int m = 0;
+            pos = 0;
+            for (int i = Convert.ToInt32(mas[0] + 1); i <= Convert.ToInt32(mas[c - 1]); ++i)
+            {
+                if (Convert.ToInt32(arr[i]) == 0)
+                {
+                    sum[pos] = m;
+                    m = 0;
+                    ++pos;
+                    continue;
+                }
+                m += Convert.ToInt32(arr[i]);
+            }
+            for (int i = 0; i < c - 1; ++i)
+                Console.Write(sum[i] + " ");
+        }
     }
-  }
 }
 
 
@@ -570,7 +570,9 @@ namespace SoloLearn
 
 
 
-3.8 
+3.8  сначала то, сколько ввожу (например 5, 4) потом по одной вниз массивы
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -698,49 +700,3 @@ namespace SoloLearn
   }
 }
 
-
-
-
-4.3
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace SoloLearn
-{
-  class Program
-  {
-      static void outputar(int[] a)
-      {
-          for(int i = 0; i < a.Length; ++i)
-              Console.WriteLine(a[i] + " ");
-          Console.WriteLine();
-      }
-      
-      int summ(int[] a)
-      {
-          int sum = 0;
-          for(int i = 0; i < a.Length; ++i)
-              sum += a[i];
-          return sum;
-      }
-      
-  /*    static void inputar(out int[] mas)
-      {
-          int n = Convert.ToInt32(Console.ReadLine());
-        int[] mas = new int [n];
-        for(int i = 0; i < mas.Length; ++i)
-            mas[i] = Convert.ToInt32(Console.ReadLine());
-        outputar(mas);
-        Console.Write(summ(mas));
-      }
-    */ 
-    static void Main(string[] args)
-    {
-  //      inputar();
-    }
-  }
-}
