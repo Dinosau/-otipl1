@@ -427,41 +427,51 @@ namespace SoloLearn
   {
     static void Main(string[] args)
     {
-        int n, k;
+        int n;
+        string k;
         n = Convert.ToInt32(Console.ReadLine());
-        k = Convert.ToInt32(Console.ReadLine());
-        int[,] mas = new int[n, k];
-        for(int i = 0; i < n; ++i)
-            for(int j = 0; j < k; ++j)
-                  mas[i, j] = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("sum of elements of each line:");
+        string[][] mas = new string[n][];
+        for(int i = 0; i < n; ++i) 
+        {
+                  k = Console.ReadLine();
+                  mas[i] = k.Split(' ');
+        }
+        Console.WriteLine("sum of elements of each line:");
         for(int i = 0; i < n; ++i)
         {
             int sum = 0;
-            for(int j = 0; j < k; ++j)
-                sum += mas[i, j];
+            for(int j = 0; j < mas[0].Length; ++j)
+                sum += Convert.ToInt32(mas[i][j]);
             Console.WriteLine(i + ":" + sum);
-            
         }
         Console.WriteLine("sum of elements of each column:");
-        for(int j = 0; j < k; ++j)
+        for(int j = 0; j < mas[0].Length; ++j)
         {
             int sum = 0;
             for(int i = 0; i < n; ++i) 
-                sum += mas[i, j];
+                sum += Convert.ToInt32(mas[i][j]);
             Console.WriteLine(j + ":" + sum);
         }
         Console.WriteLine("sum of all elements:");
         int s = 0;
         for(int i = 0; i < n; ++i)
-            for(int j = 0; j < k; ++j) 
-                s += mas[i, j];
+            for(int j = 0; j < mas[0].Length; ++j) 
+                s += Convert.ToInt32(mas[i][j]);
         Console.WriteLine(s);
     }
   }
 }
 
-3.6
+Пишу сколько у нас будет строк, а потом  массив. Пример:
+4
+1 2 3 
+2 3 4
+4 3 2
+2 2 0
+    
+    
+3.6     ввод по одному
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -499,7 +509,7 @@ namespace SoloLearn
 }
 
 3.7
- using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -554,6 +564,12 @@ namespace SoloLearn
   }
 }
 
+
+
+
+
+
+
 3.8 
 using System;
 using System.Collections.Generic;
@@ -587,6 +603,12 @@ namespace SoloLearn
     }
   }
 }
+
+
+
+
+
+
 4.1
 using System;
 using System.Collections.Generic;
@@ -616,6 +638,9 @@ namespace SoloLearn
     }
   }
 }
+
+
+
 
 
 4.2
@@ -672,6 +697,9 @@ namespace SoloLearn
     }
   }
 }
+
+
+
 
 4.3
 using System;
