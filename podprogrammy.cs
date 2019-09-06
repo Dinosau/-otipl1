@@ -35,11 +35,20 @@ namespace SoloLearn
 
 
 
-4.2
-  
-  
-  
+4.2   в тестовом варианте я ввожу 
 
+2
+1
+2
+2
+2
+3
+3
+1
+2
+3
+ -> 14
+  
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,38 +58,39 @@ using System.Threading.Tasks;
 
 namespace SoloLearn
 {
-  class Program
-  {
-      static void outputar(int[] a)
-      {
-          for(int i = 0; i < a.Length; ++i)
-              Console.WriteLine(a[i] + " ");
-          Console.WriteLine();
-      }
-      
-      int summ(int[] a)
-      {
-          int sum = 0;
-          for(int i = 0; i < a.Length; ++i)
-              sum += a[i];
-          return sum;
-      }
-      
-  /*    static void inputar(out int[] mas)
-      {
-          int n = Convert.ToInt32(Console.ReadLine());
-        int[] mas = new int [n];
-        for(int i = 0; i < mas.Length; ++i)
-            mas[i] = Convert.ToInt32(Console.ReadLine());
-        outputar(mas);
-        Console.Write(summ(mas));
-      }
-    */ 
-    static void Main(string[] args)
-    {
-  //      inputar();
+    class Program
+    { static void outputar(int[] a)
+        {
+            for (int i = 0; i < a.Length; ++i)
+                Console.WriteLine(a[i] + " ");
+            Console.WriteLine();
+        }
+
+        static int summ(int[] a)
+        {
+            int sum = 0;
+            for (int i = 0; i < a.Length; ++i)
+                sum += a[i];
+            return sum;
+        }
+
+        static int[] inputar()
+            {
+                int n = Convert.ToInt32(Console.ReadLine());
+              int[] ret = new int [n];
+              for(int i = 0; i < n; ++i)
+                  ret[i] = Convert.ToInt32(Console.ReadLine());
+            return ret;
+            }
+         
+        static void Main(string[] args)
+        {
+                 int[] fst = inputar();
+            int[] snd = inputar();
+            int[] third = inputar();
+            Console.WriteLine(summ(fst) + summ(snd) + summ(third));
+        }
     }
-  }
 }
 
 
