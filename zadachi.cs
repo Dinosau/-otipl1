@@ -364,6 +364,58 @@ namespace SoloLearn
 }
 
 3.4
+using System.Threading.Tasks;
+
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n, k;
+
+            Console.WriteLine("Type the number of columns: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Type the number of rows: ");
+            k = Convert.ToInt32(Console.ReadLine());
+            int[,] mas = new int[n, k];
+            for (int i = 0; i < n; ++i)
+                for (int j = 0; j < k; ++j)
+                    mas[i, j] = Convert.ToInt32(Console.ReadLine());
+
+            for (int j = 0; j < k; ++j)
+            {
+                for (int i = 0; i < n; ++i)
+                {
+                    Console.Write("{0, 5}", mas[i, j]);
+                }
+                Console.WriteLine();
+
+            }
+
+            Console.WriteLine();
+
+            for (int i = 0; i < n; ++i)
+            { 
+                for (int j = 0; j < k; ++j)
+                 { 
+                    Console.Write("{0, 5}", mas[i, j]); 
+
+                    }
+
+                Console.WriteLine();
+
+               }
+
+            }
+
+        }
+}
+
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -413,6 +465,9 @@ namespace SoloLearn
   }
 }
 
+
+
+
 3.5
 using System;
 using System.Collections.Generic;
@@ -420,47 +475,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace SoloLearn
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-        int n;
-        string k;
-        n = Convert.ToInt32(Console.ReadLine());
-        string[][] mas = new string[n][];
-        for(int i = 0; i < n; ++i) 
+        static void Main(string[] args)
         {
-                  k = Console.ReadLine();
-                  mas[i] = k.Split(' ');
+            int n, k;
+
+            Console.WriteLine("Type the number of lines: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Type the number of columns: ");
+            k = Convert.ToInt32(Console.ReadLine());
+            int[,] mas = new int[n, k];
+            for (int i = 0; i < n; ++i)
+                for (int j = 0; j < k; ++j)
+                    mas[i, j] = Convert.ToInt32(Console.ReadLine());
+
+            for (int j = 0; j < k; ++j)
+            {
+                for (int i = 0; i < n; ++i)
+                {
+                    Console.Write("{0, 5}", mas[i, j]);
+                }
+                Console.WriteLine();
+
+            }
+
+            Console.WriteLine();
+
+
+            Console.WriteLine("sum of elements of each column:");
+            for (int i = 0; i < n; ++i)
+            {
+                int sum = 0;
+                for (int j = 0; j <k ; ++j)
+                    sum += mas[i, j];
+                Console.WriteLine(i + ":" + sum);
+            }
+            Console.WriteLine("sum of elements of each line:");
+            for (int j = 0; j < k; ++j)
+            {
+                int sum = 0;
+                for (int i = 0; i < n; ++i)
+                    sum += mas[i, j];
+                Console.WriteLine(j + ":" + sum);
+            }
+            Console.WriteLine("sum of all elements:");
+            int s = 0;
+            for (int i = 0; i < n; ++i)
+                for (int j = 0; j < k; ++j)
+                    s += mas[i,j];
+            Console.WriteLine(s);
+
         }
-        Console.WriteLine("sum of elements of each line:");
-        for(int i = 0; i < n; ++i)
-        {
-            int sum = 0;
-            for(int j = 0; j < mas[0].Length; ++j)
-                sum += Convert.ToInt32(mas[i][j]);
-            Console.WriteLine(i + ":" + sum);
+
         }
-        Console.WriteLine("sum of elements of each column:");
-        for(int j = 0; j < mas[0].Length; ++j)
-        {
-            int sum = 0;
-            for(int i = 0; i < n; ++i) 
-                sum += Convert.ToInt32(mas[i][j]);
-            Console.WriteLine(j + ":" + sum);
-        }
-        Console.WriteLine("sum of all elements:");
-        int s = 0;
-        for(int i = 0; i < n; ++i)
-            for(int j = 0; j < mas[0].Length; ++j) 
-                s += Convert.ToInt32(mas[i][j]);
-        Console.WriteLine(s);
+
     }
-  }
-}
+
+
 
 Пишу сколько у нас будет строк, а потом  массив. Пример:
 4
