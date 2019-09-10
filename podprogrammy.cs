@@ -11,28 +11,30 @@ using System.Threading.Tasks;
 
 namespace SoloLearn
 {
-  class Program
-  {
-      static void DrawPyramid(int n)
-        {
-            for (int i = 1; i <= n; i++)
-            {
-                for (int k = 1; k <= i; k++)
-                    Console.Write("*" + " ");
-                Console.WriteLine();
-            }
-        }
-      
-    static void Main(string[] args)
+    class Program
     {
-        int a = Convert.ToInt32(Console.ReadLine());
-        DrawPyramid(a);
+        static void LineStar(int n)
+        {
+            for (int k = 1; k <= n; k++)
+                Console.Write("*" + " ");
+            Console.WriteLine();
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Type the Lenght of the triangle: ");
+            int a = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= a; i++)
+            {
+
+                LineStar(i);
+
+            }
+
+        }
     }
-  }
 }
-
-
-
 
 
 4.2   в тестовом варианте я ввожу 
