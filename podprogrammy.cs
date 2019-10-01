@@ -37,21 +37,11 @@ namespace SoloLearn
 }
 
 
-4.2   в тестовом варианте я ввожу 
 
-2
-1
-2
-2
-2
-3
-3
-1
-2
-3
- -> 14
+
+4.2
   
-using System;
+  using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,7 +51,23 @@ using System.Threading.Tasks;
 namespace SoloLearn
 {
     class Program
-    { static void outputar(int[] a)
+    {
+
+        static int[] inputar()
+        {
+
+            string text0;
+            text0 = Console.ReadLine();
+
+            string[] arr1 = text0.Split(' ');
+            int n = arr1.Length;
+            int[] arr = new int[n];
+            for(int i = 0; i < n; i++)
+                arr[i] = Convert.ToInt32(arr1[i]);
+            return arr;
+        }
+
+        static void outputar(int[] a)
         {
             for (int i = 0; i < a.Length; ++i)
                 Console.WriteLine(a[i] + " ");
@@ -76,24 +82,19 @@ namespace SoloLearn
             return sum;
         }
 
-        static int[] inputar()
-            {
-                int n = Convert.ToInt32(Console.ReadLine());
-              int[] ret = new int [n];
-              for(int i = 0; i < n; ++i)
-                  ret[i] = Convert.ToInt32(Console.ReadLine());
-            return ret;
-            }
-         
+
+
         static void Main(string[] args)
         {
-                 int[] fst = inputar();
+            Console.WriteLine("Type 3 arrays: ");
+            int[] fst = inputar();
             int[] snd = inputar();
             int[] third = inputar();
             Console.WriteLine(summ(fst) + summ(snd) + summ(third));
         }
     }
 }
+
 
 
 
