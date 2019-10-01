@@ -101,6 +101,7 @@ namespace SoloLearn
 
 4.3
   
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -110,49 +111,34 @@ using System.Threading.Tasks;
 
 namespace SoloLearn
 {
-  class Program
-  {
-      static void my_sqrt(out bool h,  out int sqrtN, int n)
-      {
-          int k = Convert.ToInt32(Math.Sqrt(n));
-          if(k * k == n)
-          {
-              h = true;
-              sqrtN = k;
-          }
-          else 
-          {
-              h = false;
-              sqrtN = 0;
-          }
-      }
-    static void Main(string[] args)
+
+    class Program
     {
-        int n, a, b;
-        n = Convert.ToInt32(Console.ReadLine());
-        a = Convert.ToInt32(Console.ReadLine());
-        b = Convert.ToInt32(Console.ReadLine());
-        bool h;
-        int sqrtN;
-        if(n < 0)
-            n *= -1;
-        my_sqrt(out h, out sqrtN, n);
-        if(n == 0)
-            h = false;
-        if(h)
-            Console.WriteLine("true " + sqrtN);
-        else
-            Console.WriteLine("false");
-        while(a <= b)
+        static bool IsFullSquare(int n, out int root)
         {
-           // bool h1;
-            my_sqrt(out h, out sqrtN, a);
-            if(h)
-                Console.Write(a + " ");
-            ++a;
+            root = 0;
+
+            if (n < 0)
+                return false;
+
+            root = (int)Math.Sqrt(n);
+
+            return root * root == n;
+        }
+
+        static void Main(string[] args)
+        {
+            Console.Write("Input low bound: ");
+            int low = int.Parse(Console.ReadLine());
+
+            Console.Write("Input hi bound: ");
+            int hi = int.Parse(Console.ReadLine());
+
+            for (int n = low; n <= hi; n++)
+            {
+                if (IsFullSquare(n, out int root))
+                    Console.WriteLine("{0} {1}", n, root);
+            }
         }
     }
-  }
 }
-
-
