@@ -637,18 +637,7 @@ namespace SoloLearn
                 Console.Write(sum[i] + " ");
         }
     }
-}
-
-
-
-
-
-
-
-3.8  сначала то, сколько ввожу (например 5, 4) потом по одной вниз массивы
-
-
-using System;
+}using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -657,30 +646,81 @@ using System.Threading.Tasks;
 
 namespace SoloLearn
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-       int n, k;
-       n = Convert.ToInt32(Console.ReadLine());
-       k = Convert.ToInt32(Console.ReadLine());
-       int[] arr = new int[n];
-       for(int i = 0; i < n; ++i)
-             arr[i] = Convert.ToInt32(Console.ReadLine());
-       int[] mas = new int[k];
-       for(int i = 0; i < k; ++i)
-             mas[i] = Convert.ToInt32(Console.ReadLine());
-         int[] s = new int[n + k];
-         for(int i = 0; i < n; ++i)
-             s[i] = arr[i];
-         for(int i = n; i < n + k; ++i)
-             s[i] = mas[i - n];
-         for(int i = 0; i < n + k; ++i)
-              Console.Write(s[i] + " ");
+        static void Main(string[] args)
+        {
+            string text0, text1;
+            Console.WriteLine("Type 1 massiv: ");
+            text0 = Console.ReadLine();
+            Console.WriteLine("Type 2 massiv: ");
+            text1 = Console.ReadLine();
+
+            string[] arr = text0.Split(' ');
+            string[] mas = text1.Split(' ');
+
+            int n = arr.Length; 
+            int k = mas.Length;
+
+            int[] s = new int[n];
+            int[] q = new int[k];
+
+            for (int i = 0; i < k; ++i)
+            { q[i] = Convert.ToInt32(mas[i]); }
+
+            int[] d = new int[ n + k ];
+
+
+            int a = 0;
+            int b = 0;
+            int c = 0;
+
+            while
+                (a < n && b < k)
+                       
+                { if (s[a] < q[b] )
+                    { 
+                        d[c] = s[a]; a++; c++;
+                     }
+                else
+                    {
+                        d[c] = q[b]; b++; c++;
+                    }
+                }
+
+            if (a == n)
+                { for (int i = b; i < k; i++)
+                {
+                    d[c] = q[i]; c++;
+                 }  
+                }
+            else
+            {
+                for (int i = a; i < n; i++)
+                {
+                    d[c] = s[i]; c++;
+                }
+            }
+
+
+            for (int i = 0; i < n + k; ++i)
+            Console.Write(d[i] + " "); 
+
+            Console.ReadLine();
+          
+        }
     }
-  }
 }
 
+
+
+
+
+
+
+
+
+3.8  
 
 
 
