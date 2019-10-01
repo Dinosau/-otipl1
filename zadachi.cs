@@ -637,7 +637,14 @@ namespace SoloLearn
                 Console.Write(sum[i] + " ");
         }
     }
-}using System;
+}
+
+
+
+
+3.8
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -715,12 +722,6 @@ namespace SoloLearn
 
 
 
-
-
-
-
-
-3.8  
 
 
 
