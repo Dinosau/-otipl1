@@ -41,7 +41,7 @@ namespace SoloLearn
 
 4.2
   
-  using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,17 +62,20 @@ namespace SoloLearn
             string[] arr1 = text0.Split(' ');
             int n = arr1.Length;
             int[] arr = new int[n];
-            for(int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
                 arr[i] = Convert.ToInt32(arr1[i]);
             return arr;
+
         }
 
         static void outputar(int[] a)
         {
             for (int i = 0; i < a.Length; ++i)
-                Console.WriteLine(a[i] + " ");
+            Console.Write(a[i] + " ");
             Console.WriteLine();
         }
+
+    
 
         static int summ(int[] a)
         {
@@ -85,16 +88,23 @@ namespace SoloLearn
 
 
         static void Main(string[] args)
-        {
-            Console.WriteLine("Type 3 arrays: ");
-            int[] fst = inputar();
-            int[] snd = inputar();
-            int[] third = inputar();
-            Console.WriteLine(summ(fst) + summ(snd) + summ(third));
+        {  
+
+           for (int i = 0; i <= 3; i++)
+            {
+         
+                Console.WriteLine("Type an array: ");
+                int[] num = inputar();
+                outputar(num);
+                Console.Write("Sum is "); 
+                Console.WriteLine(summ(num));
+             }
+
+
+            Console.WriteLine("Sum of all");
         }
     }
 }
-
 
 
 
