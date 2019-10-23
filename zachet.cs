@@ -38,7 +38,7 @@ namespace SoloLearn
                     for (int j = 0; j < resultArray.GetLength(1); j++)
                     {
                         Console.WriteLine("Таблица: ");
-                        Console.Write(resultArray[i, j] + " ");
+                        Console.Write("{0,4} ", resultArray[i, j] + " ");
                     }
                 }
             }
